@@ -13,7 +13,6 @@ export class AuthService {
   constructor(private router: Router) { }
 
   fazerLogin(usuario: Usuario) {
-    console.log(usuario);
     if (usuario.nome === 'usuario@email.com' && usuario.senha === '123456') {
       this.usuarioAutenticado = true;
 
@@ -23,6 +22,10 @@ export class AuthService {
     } else {
       this.usuarioAutenticado = false;
     }
+  }
+
+  usuarioEstaAutenticado() {
+    return this.usuarioAutenticado;
   }
 
 }
