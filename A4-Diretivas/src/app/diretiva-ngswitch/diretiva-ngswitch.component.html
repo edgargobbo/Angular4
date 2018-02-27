@@ -1,0 +1,31 @@
+<nav class="nav navbar-dark">
+  <a class="nav-link" href="#"
+    [class.disabled]="aba == 'home'"
+    (click)="aba = 'home'">Home</a>
+  <a class="nav-link" href="#"
+    [class.disabled]="aba == 'mapa'"
+    (click)="aba = 'mapa'">Mapa</a>
+  <a class="nav-link" href="#"
+    [class.disabled]="aba == 'lista'"
+    (click)="aba = 'lista'">Lista</a>
+</nav>
+
+<div class="container" [ngSwitch]="aba">
+  <p *ngSwitchCase="'mapa'">Modo mapa ativado</p>
+  <p *ngSwitchCase="'lista'">Modo lista ativado</p>
+  <p *ngSwitchDefault>Modo home ativado</p>
+</div>
+
+<!--
+<h5>Removendo o * e usando template</h5>
+<div class="container" [ngSwitch]="aba">
+  <template [ngSwitchCase]="'mapa'">
+    <p>Modo mapa ativado</p>
+  </template>
+  <template [ngSwitchCase]="'lista'">
+    <p>Modo lista ativado</p>
+  </template>
+  <template [ngSwitchCase]="'home'" ngSwitchDefault>
+    <p>Modo home ativado</p>
+  </template>
+</div>-->
